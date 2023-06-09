@@ -1,6 +1,6 @@
 package io.genemoz.ppf;
 
-import static io.kodebite.ppf.PinLockView.getDimensionInPx;
+import static io.genemoz.ppf.PinLockView.getDimensionInPx;
 
 import android.animation.LayoutTransition;
 import android.content.Context;
