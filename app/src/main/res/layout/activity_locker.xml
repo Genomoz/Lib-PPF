@@ -25,6 +25,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/switch_lock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -116,26 +117,17 @@
                 app:ppf_keyVerticalSpacing="10sp"
                 app:ppf_pinLength="6" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/patternBtn"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
+
+            <ImageView
+                android:id="@+id/fingerprintBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
                 android:layout_marginStart="60dp"
-                android:layout_marginBottom="50dp"
-                app:cardBackgroundColor="@color/lightBlue"
-                app:cardCornerRadius="15dp"
-                app:elevation="5dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_finger" />
-
-
-            </androidx.cardview.widget.CardView>
+                android:layout_marginBottom="45dp"
+                android:src="@drawable/ic_finger" />
 
 
         </RelativeLayout>
