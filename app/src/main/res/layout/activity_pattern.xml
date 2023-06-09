@@ -1,9 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/homeBg"
     tools:context=".PatternActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/homeBg">
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            style="@style/TextAppearance.Material3.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Create Pattern Lock"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/switch_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:src="@drawable/ic_pattern_img" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@id/toolbar_layout"
+        android:background="#F3F4F8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_pattern_img" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/plv_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Draw Your Pattern"
+            android:textColor="@color/textColor"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/plv_layout"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/pin_layout_bg"
+            android:padding="10dp">
+
+            <io.genemoz.ppf.PatternLockView
+                android:id="@+id/pattern_lock_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:ppf_aspectRatio="match_width"
+                app:ppf_dotAnimationDuration="150"
+                app:ppf_dotNormalSize="20dp"
+                app:ppf_dotSelectedSize="40dp"
+                app:ppf_lineEndAnimationDuration="100"
+                app:ppf_lineWidth="10dp"
+                app:ppf_patternLength="3"
+                app:ppf_stateCorrectColor="#16B983"
+                app:ppf_stateNormalColor="@color/colorPrimary"
+                app:ppf_stateWrongColor="@color/danger" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FFDFEBF8"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:text="Forgot Pattern?"
+            android:textColor="@color/danger"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

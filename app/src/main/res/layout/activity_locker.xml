@@ -115,7 +115,7 @@
                 app:ppf_keyTextColor="@color/textColor"
                 app:ppf_keyTextSize="30sp"
                 app:ppf_keyVerticalSpacing="10sp"
-                app:ppf_pinLength="6" />
+                app:ppf_pinLength="4" />
 
 
             <ImageView
